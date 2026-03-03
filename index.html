@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dvij Joshi — Developer & Creator</title>
+    <meta name="description"
+        content="Portfolio of Dvij Joshi — BTech 3rd Year Computer Science student, Full-Stack Developer, and Builder.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">dvij<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting reveal-up">Hi there, I'm Dvij 👋</p>
+                <h1 class="hero-title">
+                    <span class="reveal-up" style="--delay: 0.1s">Build More,</span>
+                    <span class="reveal-up" style="--delay: 0.2s">Create More,</span>
+                    <span class="reveal-up highlight-text" style="--delay: 0.3s">Ship Products.</span>
+                </h1>
+                <p class="hero-description reveal-up" style="--delay: 0.4s">
+                    BTech 3rd Year CS Student — I build full-stack applications,
+                    tinker with AI/ML, and love turning ideas into working software.
+                </p>
+                <div class="hero-actions reveal-up" style="--delay: 0.5s">
+                    <a href="#work" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Say Hello</a>
+                </div>
+            </div>
+            <div class="hero-illustration reveal-up" style="--delay: 0.3s">
+                <div class="illustration-scene">
+                    <div class="desk">
+                        <div class="monitor">
+                            <div class="screen">
+                                <div class="code-line cl1"></div>
+                                <div class="code-line cl2"></div>
+                                <div class="code-line cl3"></div>
+                                <div class="code-line cl4"></div>
+                                <div class="code-line cl5"></div>
+                                <div class="code-line cl6"></div>
+                            </div>
+                            <div class="monitor-stand"></div>
+                        </div>
+                        <div class="keyboard"></div>
+                        <div class="coffee-cup">
+                            <div class="steam s1"></div>
+                            <div class="steam s2"></div>
+                            <div class="steam s3"></div>
+                        </div>
+                        <div class="plant">
+                            <div class="pot"></div>
+                            <div class="stem"></div>
+                            <div class="leaf l1"></div>
+                            <div class="leaf l2"></div>
+                            <div class="leaf l3"></div>
+                        </div>
+                    </div>
+                    <div class="floating-shapes">
+                        <div class="shape shape-circle"></div>
+                        <div class="shape shape-triangle"></div>
+                        <div class="shape shape-square"></div>
+                        <div class="shape shape-dot d1"></div>
+                        <div class="shape shape-dot d2"></div>
+                        <div class="shape shape-dot d3"></div>
+                    </div>
+                    <div class="character">
+                        <div class="char-head">
+                            <div class="hair"></div>
+                            <div class="face">
+                                <div class="eye left-eye"></div>
+                                <div class="eye right-eye"></div>
+                                <div class="mouth"></div>
+                            </div>
+                        </div>
+                        <div class="char-body"></div>
+                        <div class="char-arm left-arm"></div>
+                        <div class="char-arm right-arm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About / What I Do Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-label reveal-up">
+                <span class="label-dot"></span>
+                About Me
+            </div>
+            <h2 class="section-title reveal-up">
+                The <span class="text-highlight">Builder's</span> Mindset
+            </h2>
+            <p class="section-subtitle reveal-up">
+                I'm a Computer Science undergraduate who loves building things that solve real problems.
+                From gesture-controlled interfaces to full-stack platforms — if it's challenging, I'm in.
+            </p>
+            <div class="about-cards">
+                <div class="about-card card-lavender reveal-up" style="--delay: 0.1s">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <rect x="6" y="10" width="36" height="24" rx="3" stroke="currentColor" stroke-width="3" />
+                            <path d="M6 17h36" stroke="currentColor" stroke-width="3" />
+                            <circle cx="12" cy="13.5" r="1.5" fill="currentColor" />
+                            <circle cx="17" cy="13.5" r="1.5" fill="currentColor" />
+                            <circle cx="22" cy="13.5" r="1.5" fill="currentColor" />
+                            <path d="M14 24l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M18 38h12" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>Full-Stack Development</h3>
+                    <p>Building end-to-end applications with React, Node.js, Firebase, and modern web technologies.</p>
+                </div>
+                <div class="about-card card-yellow reveal-up" style="--delay: 0.2s">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M24 6C14.06 6 6 14.06 6 24s8.06 18 18 18 18-8.06 18-18S33.94 6 24 6z"
+                                stroke="currentColor" stroke-width="3" />
+                            <path d="M18 20c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 6-6 6" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" />
+                            <circle cx="24" cy="32" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <h3>AI / ML Exploration</h3>
+                    <p>Gesture recognition systems, computer vision pipelines, and experimenting with intelligent
+                        interfaces.</p>
+                </div>
+                <div class="about-card card-mint reveal-up" style="--delay: 0.3s">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="4" width="32" height="40" rx="3" stroke="currentColor" stroke-width="3" />
+                            <path d="M16 14h16M16 20h12M16 26h14M16 32h8" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3>System Design</h3>
+                    <p>Database architecture, API design, and building scalable backend systems that just work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Projects Section -->
+    <section class="work-section" id="work">
+        <div class="container">
+            <div class="section-label reveal-up">
+                <span class="label-dot"></span>
+                Selected Work
+            </div>
+            <h2 class="section-title reveal-up">
+                Things I've <span class="text-highlight">Built</span>
+            </h2>
+            <p class="section-subtitle reveal-up">
+                A collection of projects that I'm proud of — from hackathon prototypes to full-featured applications.
+            </p>
+
+            <div class="projects-stack">
+                <!-- Project 1 -->
+                <div class="project-showcase showcase-yellow reveal-up">
+                    <div class="project-info">
+                        <span class="project-tag">Android · Accessibility</span>
+                        <h3 class="project-name">Eye and Face Gesture Phone Control</h3>
+                        <p class="project-desc">
+                            An Android accessibility app that uses MediaPipe's Face Landmarker to translate head
+                            movements into cursor control and facial gestures into clicks — providing a hands-free input
+                            method for individuals with motor disabilities, paralysis, or physical impairments.
+                        </p>
+                        <div class="project-tech">
+                            <span>Android</span>
+                            <span>MediaPipe</span>
+                            <span>Java</span>
+                            <span>OpenCV</span>
+                        </div>
+                        <a href="https://github.com/Dvij-Joshi/eye-face-gesture-control" target="_blank"
+                            class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-preview">
+                        <div class="preview-window">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="preview-content gesture-preview">
+                                <div class="face-outline">
+                                    <div class="eye-track left"></div>
+                                    <div class="eye-track right"></div>
+                                    <div class="nose-dot"></div>
+                                    <div class="lip-line"></div>
+                                </div>
+                                <div class="tracking-grid">
+                                    <div class="grid-dot gd1"></div>
+                                    <div class="grid-dot gd2"></div>
+                                    <div class="grid-dot gd3"></div>
+                                    <div class="grid-dot gd4"></div>
+                                </div>
+                                <div class="gesture-label">Brow Raise → Scroll Up</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-showcase showcase-mint reveal-up">
+                    <div class="project-info">
+                        <span class="project-tag">Full-Stack · React</span>
+                        <h3 class="project-name">React Airline - Visa Services Platform</h3>
+                        <p class="project-desc">
+                            A comprehensive React-based visa services platform featuring user authentication, service
+                            discovery, online booking, and secure Razorpay payment integration.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MySQL</span>
+                            <span>Razorpay</span>
+                        </div>
+                        <a href="https://github.com/Dvij-Joshi/React-airline" target="_blank" class="project-link">View
+                            Project →</a>
+                    </div>
+                    <div class="project-preview">
+                        <div class="preview-window">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="preview-content dashboard-preview">
+                                <div class="dash-sidebar">
+                                    <div class="sb-item active"></div>
+                                    <div class="sb-item"></div>
+                                    <div class="sb-item"></div>
+                                    <div class="sb-item"></div>
+                                </div>
+                                <div class="dash-main">
+                                    <div class="dash-header"></div>
+                                    <div class="dash-cards">
+                                        <div class="mini-card mc1"></div>
+                                        <div class="mini-card mc2"></div>
+                                        <div class="mini-card mc3"></div>
+                                    </div>
+                                    <div class="dash-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-showcase showcase-lavender reveal-up">
+                    <div class="project-info">
+                        <span class="project-tag">Game Dev · Real-time Multiplayer</span>
+                        <h3 class="project-name">Arcade Air Hockey</h3>
+                        <p class="project-desc">
+                            A dynamic arcade air hockey game with realistic physics,
+                            resizable arena mechanics, and chaos mode. Built with Phaser 3 and real-time multiplayer.
+                        </p>
+                        <div class="project-tech">
+                            <span>TypeScript</span>
+                            <span>Phaser 3</span>
+                            <span>Socket.io</span>
+                            <span>Node.js</span>
+                        </div>
+                        <a href="https://github.com/Dvij-Joshi/Arcade-Air-Hockey" target="_blank"
+                            class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-preview">
+                        <div class="preview-window">
+                            <div class="window-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="preview-content hockey-preview">
+                                <div class="rink">
+                                    <div class="center-line"></div>
+                                    <div class="center-circle"></div>
+                                    <div class="puck"></div>
+                                    <div class="paddle p1"></div>
+                                    <div class="paddle p2"></div>
+                                    <div class="goal g1"></div>
+                                    <div class="goal g2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /.projects-stack -->
+        </div>
+    </section>
+
+    <!-- Marquee Stats Section -->
+    <section class="stats-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="stat-item">10+ Projects Built</span>
+                <span class="stat-divider">✦</span>
+                <span class="stat-item">3rd Year BTech CSE</span>
+                <span class="stat-divider">✦</span>
+                <span class="stat-item">AI & Data Analytics Trainee</span>
+                <span class="stat-divider">✦</span>
+                <span class="stat-item">AI/ML Enthusiast</span>
+                <span class="stat-divider">✦</span>
+                <span class="stat-item">10+ Projects Built</span>
+                <span class="stat-divider">✦</span>
+                <span class="stat-item">3rd Year BTech CSE</span>
+                <span class="stat-divider">✦</span>
+                <span class="stat-item">AI & Data Analytics Trainee</span>
+                <span class="stat-divider">✦</span>
+                <span class="stat-item">AI/ML Enthusiast</span>
+                <span class="stat-divider">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-label reveal-up">
+                <span class="label-dot"></span>
+                Tech Stack
+            </div>
+            <h2 class="section-title reveal-up">
+                Tools & <span class="text-highlight">Technologies</span>
+            </h2>
+
+            <div class="skills-grid">
+                <div class="skill-category reveal-up" style="--delay: 0.1s">
+                    <h4 class="skill-cat-title">Languages</h4>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><span class="tag-dot lang"></span>Python</div>
+                        <div class="skill-tag"><span class="tag-dot lang"></span>JavaScript</div>
+                        <div class="skill-tag"><span class="tag-dot lang"></span>TypeScript</div>
+                        <div class="skill-tag"><span class="tag-dot lang"></span>Java</div>
+                        <div class="skill-tag"><span class="tag-dot lang"></span>C++</div>
+                        <div class="skill-tag"><span class="tag-dot lang"></span>SQL</div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up" style="--delay: 0.15s">
+                    <h4 class="skill-cat-title">Frontend</h4>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><span class="tag-dot frontend"></span>React.js</div>
+                        <div class="skill-tag"><span class="tag-dot frontend"></span>Next.js</div>
+                        <div class="skill-tag"><span class="tag-dot frontend"></span>Tailwind CSS</div>
+                        <div class="skill-tag"><span class="tag-dot frontend"></span>HTML5 / CSS3</div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up" style="--delay: 0.2s">
+                    <h4 class="skill-cat-title">Backend & Cloud</h4>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><span class="tag-dot backend"></span>Node.js</div>
+                        <div class="skill-tag"><span class="tag-dot backend"></span>Express.js</div>
+                        <div class="skill-tag"><span class="tag-dot backend"></span>MongoDB</div>
+                        <div class="skill-tag"><span class="tag-dot backend"></span>PostgreSQL</div>
+                        <div class="skill-tag"><span class="tag-dot backend"></span>Firebase</div>
+                        <div class="skill-tag"><span class="tag-dot backend"></span>Supabase</div>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up" style="--delay: 0.25s">
+                    <h4 class="skill-cat-title">Libraries & Tools</h4>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><span class="tag-dot tools"></span>Git / GitHub</div>
+                        <div class="skill-tag"><span class="tag-dot tools"></span>OpenCV</div>
+                        <div class="skill-tag"><span class="tag-dot tools"></span>MediaPipe</div>
+                        <div class="skill-tag"><span class="tag-dot tools"></span>Figma</div>
+                        <div class="skill-tag"><span class="tag-dot tools"></span>Vercel</div>
+                        <div class="skill-tag"><span class="tag-dot tools"></span>Postman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Timeline -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="section-label reveal-up">
+                <span class="label-dot"></span>
+                Journey So Far
+            </div>
+            <h2 class="section-title reveal-up">
+                Experience & <span class="text-highlight">Activities</span>
+            </h2>
+
+            <div class="timeline">
+                <div class="timeline-item reveal-left" style="--delay: 0.1s">
+                    <div class="timeline-card card-lavender">
+                        <span class="timeline-date">2025 – Present</span>
+                        <h3>AI & Data Analytics Trainee</h3>
+                        <p><strong>Edunet Foundation (CodeUnnati)</strong><br>Participating in an intensive
+                            industry-oriented training program at ITM SLS Baroda University, focusing on the practical
+                            implementation of AI/ML workflows and data analytics.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right" style="--delay: 0.15s">
+                    <div class="timeline-card card-yellow">
+                        <span class="timeline-date">2024 – Present</span>
+                        <h3>B.Tech in Computer Science and Engineering</h3>
+                        <p><strong>ITM SLS Baroda University</strong><br>Currently a 3rd-year undergraduate, building a
+                            strong academic record and focusing on advanced algorithms, systems programming, and AI.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-left" style="--delay: 0.2s">
+                    <div class="timeline-card card-mint">
+                        <span class="timeline-date">2021 – 2024</span>
+                        <h3>Diploma in Computer Engineering</h3>
+                        <p><strong>Government Polytechnic Dahod</strong><br>Established a technical foundation in
+                            programming logic, database management, and web technologies, graduating in the top 10% of
+                            the batch.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right" style="--delay: 0.25s">
+                    <div class="timeline-card card-pink">
+                        <span class="timeline-date">Sep 2022 – Oct 2022</span>
+                        <h3>Web Development Intern</h3>
+                        <p><strong>BrainyBeam Technologies Pvt. Ltd.</strong><br>Completed a professional internship,
+                            creating responsive frontend interfaces using HTML5, CSS3, and JavaScript for live client
+                            projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Big Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="big-quote reveal-up">
+                <span class="quote-mark">"</span>
+                I believe the best way to learn engineering is to
+                <span class="text-highlight">build things</span> that people
+                actually want to use.
+                <span class="quote-mark">"</span>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info reveal-up">
+                    <div class="section-label">
+                        <span class="label-dot"></span>
+                        Let's Connect
+                    </div>
+                    <h2 class="section-title">
+                        Got an idea? <br><span class="text-highlight">Let's talk.</span>
+                    </h2>
+                    <p class="contact-text">
+                        Whether it's a project collaboration, internship opportunity,
+                        or just a chat about tech — I'm always open to connecting.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:contactdvij@gmail.com" class="contact-link-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m2 4 10 8 10-8" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="link-label">Email</span>
+                                <span class="link-value">contactdvij@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Dvij-Joshi" target="_blank" class="contact-link-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="link-label">GitHub</span>
+                                <span class="link-value">@Dvij-Joshi</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/dvijjoshi" target="_blank" class="contact-link-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="link-label">LinkedIn</span>
+                                <span class="link-value">Dvij Joshi</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Footer with City Skyline -->
+    <footer class="footer">
+        <!-- Night sky elements -->
+        <div class="night-sky">
+            <div class="moon"></div>
+            <div class="star st1"></div>
+            <div class="star st2"></div>
+            <div class="star st3"></div>
+            <div class="star st4"></div>
+            <div class="star st5"></div>
+            <div class="star st6"></div>
+            <div class="star st7"></div>
+            <div class="star st8"></div>
+            <div class="star st9"></div>
+            <div class="star st10"></div>
+            <div class="star st11"></div>
+            <div class="star st12"></div>
+            <div class="cloud cl1"></div>
+            <div class="cloud cl2"></div>
+        </div>
+
+        <!-- SVG Skyline -->
+        <div class="skyline-svg">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background buildings (furthest) -->
+                <rect x="20" y="140" width="60" height="180" rx="3" fill="#6b52a3" opacity="0.5" />
+                <rect x="100" y="100" width="45" height="220" rx="3" fill="#8a6fc0" opacity="0.4" />
+                <rect x="160" y="130" width="70" height="190" rx="3" fill="#7c5cbf" opacity="0.45" />
+                <rect x="250" y="80" width="40" height="240" rx="3" fill="#9b7fd4" opacity="0.4" />
+                <rect x="670" y="110" width="55" height="210" rx="3" fill="#8a6fc0" opacity="0.4" />
+                <rect x="1100" y="90" width="50" height="230" rx="3" fill="#7c5cbf" opacity="0.45" />
+                <rect x="1200" y="120" width="65" height="200" rx="3" fill="#6b52a3" opacity="0.5" />
+                <rect x="1330" y="140" width="50" height="180" rx="3" fill="#9b7fd4" opacity="0.4" />
+
+                <!-- Mid buildings -->
+                <rect x="50" y="160" width="55" height="160" rx="4" fill="#e8dff5" />
+                <rect x="310" y="110" width="50" height="210" rx="4" fill="#fce588" />
+                <rect x="380" y="150" width="65" height="170" rx="4" fill="#b8f0d8" />
+                <rect x="460" y="90" width="45" height="230" rx="4" fill="#fcd5ce" />
+                <rect x="520" y="130" width="70" height="190" rx="4" fill="#c9b8e8" />
+                <rect x="610" y="170" width="50" height="150" rx="4" fill="#fce588" />
+                <rect x="730" y="100" width="60" height="220" rx="4" fill="#b8f0d8" />
+                <rect x="810" y="140" width="50" height="180" rx="4" fill="#fcd5ce" />
+                <rect x="880" y="80" width="55" height="240" rx="4" fill="#e8dff5" />
+                <rect x="950" y="150" width="65" height="170" rx="4" fill="#fce588" />
+                <rect x="1030" y="120" width="50" height="200" rx="4" fill="#c9b8e8" />
+                <rect x="1140" y="160" width="55" height="160" rx="4" fill="#b8f0d8" />
+                <rect x="1270" y="100" width="60" height="220" rx="4" fill="#fcd5ce" />
+
+                <!-- Windows on mid buildings -->
+                <!-- Building at x=310 (yellow) -->
+                <rect x="318" y="120" width="8" height="8" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+                <rect x="332" y="120" width="8" height="8" rx="1" fill="rgba(255,255,200,0.4)" />
+                <rect x="345" y="120" width="8" height="8" rx="1" fill="rgba(255,255,200,0.7)" class="win-glow" />
+                <rect x="318" y="140" width="8" height="8" rx="1" fill="rgba(255,255,200,0.5)" />
+                <rect x="332" y="140" width="8" height="8" rx="1" fill="rgba(255,255,200,0.9)" class="win-glow" />
+                <rect x="345" y="140" width="8" height="8" rx="1" fill="rgba(255,255,200,0.3)" />
+                <rect x="318" y="160" width="8" height="8" rx="1" fill="rgba(255,255,200,0.7)" class="win-glow" />
+                <rect x="332" y="160" width="8" height="8" rx="1" fill="rgba(255,255,200,0.4)" />
+
+                <!-- Building at x=460 (pink) -->
+                <rect x="468" y="100" width="7" height="7" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+                <rect x="480" y="100" width="7" height="7" rx="1" fill="rgba(255,255,200,0.3)" />
+                <rect x="492" y="100" width="7" height="7" rx="1" fill="rgba(255,255,200,0.6)" />
+                <rect x="468" y="120" width="7" height="7" rx="1" fill="rgba(255,255,200,0.4)" />
+                <rect x="480" y="120" width="7" height="7" rx="1" fill="rgba(255,255,200,0.9)" class="win-glow" />
+                <rect x="492" y="120" width="7" height="7" rx="1" fill="rgba(255,255,200,0.5)" />
+                <rect x="468" y="140" width="7" height="7" rx="1" fill="rgba(255,255,200,0.7)" class="win-glow" />
+                <rect x="480" y="140" width="7" height="7" rx="1" fill="rgba(255,255,200,0.3)" />
+                <rect x="492" y="140" width="7" height="7" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+
+                <!-- Building at x=880 (lavender) -->
+                <rect x="888" y="90" width="8" height="8" rx="1" fill="rgba(255,255,200,0.7)" class="win-glow" />
+                <rect x="902" y="90" width="8" height="8" rx="1" fill="rgba(255,255,200,0.4)" />
+                <rect x="916" y="90" width="8" height="8" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+                <rect x="888" y="110" width="8" height="8" rx="1" fill="rgba(255,255,200,0.5)" />
+                <rect x="902" y="110" width="8" height="8" rx="1" fill="rgba(255,255,200,0.9)" class="win-glow" />
+                <rect x="916" y="110" width="8" height="8" rx="1" fill="rgba(255,255,200,0.3)" />
+                <rect x="888" y="130" width="8" height="8" rx="1" fill="rgba(255,255,200,0.6)" />
+                <rect x="902" y="130" width="8" height="8" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+
+                <!-- Antenna towers -->
+                <line x1="335" y1="110" x2="335" y2="85" stroke="#fce588" stroke-width="2" />
+                <circle cx="335" cy="82" r="3" fill="#ff6b6b" class="antenna-light" />
+                <line x1="907" y1="80" x2="907" y2="50" stroke="#e8dff5" stroke-width="2" />
+                <circle cx="907" cy="47" r="3" fill="#ff6b6b" class="antenna-light" />
+                <line x1="483" y1="90" x2="483" y2="65" stroke="#fcd5ce" stroke-width="2" />
+                <circle cx="483" cy="62" r="2.5" fill="#ff6b6b" class="antenna-light" />
+
+                <!-- Foreground buildings (closest, darker) -->
+                <rect x="0" y="220" width="80" height="100" rx="4" fill="#7c5cbf" />
+                <rect x="90" y="190" width="60" height="130" rx="4" fill="#9b7fd4" />
+                <rect x="200" y="210" width="90" height="110" rx="4" fill="#6b52a3" />
+                <rect x="420" y="230" width="50" height="90" rx="4" fill="#7c5cbf" />
+                <rect x="560" y="200" width="80" height="120" rx="4" fill="#9b7fd4" />
+                <rect x="700" y="220" width="60" height="100" rx="4" fill="#6b52a3" />
+                <rect x="850" y="210" width="75" height="110" rx="4" fill="#7c5cbf" />
+                <rect x="1000" y="230" width="55" height="90" rx="4" fill="#9b7fd4" />
+                <rect x="1150" y="200" width="70" height="120" rx="4" fill="#6b52a3" />
+                <rect x="1350" y="210" width="90" height="110" rx="4" fill="#7c5cbf" />
+
+                <!-- Foreground windows -->
+                <rect x="10" y="232" width="6" height="6" rx="1" fill="rgba(255,255,200,0.7)" class="win-glow" />
+                <rect x="22" y="232" width="6" height="6" rx="1" fill="rgba(255,255,200,0.4)" />
+                <rect x="34" y="232" width="6" height="6" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+                <rect x="10" y="248" width="6" height="6" rx="1" fill="rgba(255,255,200,0.5)" />
+                <rect x="22" y="248" width="6" height="6" rx="1" fill="rgba(255,255,200,0.9)" class="win-glow" />
+                <rect x="100" y="202" width="6" height="6" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+                <rect x="112" y="202" width="6" height="6" rx="1" fill="rgba(255,255,200,0.4)" />
+                <rect x="124" y="202" width="6" height="6" rx="1" fill="rgba(255,255,200,0.7)" class="win-glow" />
+                <rect x="570" y="212" width="6" height="6" rx="1" fill="rgba(255,255,200,0.6)" />
+                <rect x="582" y="212" width="6" height="6" rx="1" fill="rgba(255,255,200,0.9)" class="win-glow" />
+                <rect x="594" y="212" width="6" height="6" rx="1" fill="rgba(255,255,200,0.4)" />
+                <rect x="860" y="222" width="6" height="6" rx="1" fill="rgba(255,255,200,0.8)" class="win-glow" />
+                <rect x="872" y="222" width="6" height="6" rx="1" fill="rgba(255,255,200,0.5)" />
+                <rect x="884" y="222" width="6" height="6" rx="1" fill="rgba(255,255,200,0.7)" class="win-glow" />
+
+                <!-- Ground -->
+                <rect x="0" y="310" width="1440" height="10" fill="#2d2640" />
+            </svg>
+        </div>
+
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#" class="footer-logo">dvij<span>.dev</span></a>
+                        <p class="footer-tagline">BTech 3rd Year · Full-Stack Developer · Builder</p>
+                        <div class="footer-socials">
+                            <a href="https://github.com/Dvij-Joshi" target="_blank" aria-label="GitHub"
+                                class="social-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/dvijjoshi" target="_blank" aria-label="LinkedIn"
+                                class="social-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                            </a>
+                            <a href="mailto:contactdvij@gmail.com" aria-label="Email" class="social-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"
+                                    height="20">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m2 4 10 8 10-8" />
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com/dvijjoshi" target="_blank" aria-label="Twitter"
+                                class="social-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-nav">
+                        <h4>Quick Links</h4>
+                        <a href="#about">About</a>
+                        <a href="#work">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-nav">
+                        <h4>Tech Focus</h4>
+                        <span>Full-Stack Web</span>
+                        <span>AI / ML</span>
+                        <span>Computer Vision</span>
+                        <span>System Design</span>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Designed & Built by <strong>Dvij Joshi</strong></p>
+                    <!-- <p class="footer-heart">Made with curiosity & caffeine ☕</p> -->
+                </div>
+            </div>
+        </div>
+
+        <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+                <path d="M18 15l-6-6-6 6" />
+            </svg>
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
