@@ -198,8 +198,8 @@
     const key = new THREE.DirectionalLight(0xff4d1c, 1.0); key.position.set(8, 10, 8); scene.add(key);
     const fill = new THREE.DirectionalLight(0x1e4dd8, 0.6); fill.position.set(-10, -6, 6); scene.add(fill);
 
-    // Much fewer particles, bigger size — actually visible
-    const N = (prefersReduced || innerWidth < 560) ? 400 : 700;
+    // Dense fine particles — more numerous, smaller size for tight cluster look
+    const N = (prefersReduced || innerWidth < 560) ? 600 : (innerWidth < 820 ? 800 : 1100);
     const sampleGeo = src => {
       const g = src.toNonIndexed ? src.toNonIndexed() : src;
       const p = g.attributes.position.array;
@@ -232,26 +232,26 @@
 
     const pgeo = new THREE.BufferGeometry();
     pgeo.setAttribute('position', new THREE.BufferAttribute(cur, 3));
-    const ptSize = innerWidth < 560 ? 0.10 : innerWidth < 820 ? 0.11 : 0.12;
-    const pmat = new THREE.PointsMaterial({ size: ptSize, color: 0xff4d1c, transparent: true, opacity: 0.92, depthWrite: false, sizeAttenuation: true });
+    const ptSize = innerWidth < 560 ? 0.065 : innerWidth < 820 ? 0.068 : 0.072;
+    const pmat = new THREE.PointsMaterial({ size: ptSize, color: 0xff4d1c, transparent: true, opacity: 0.88, depthWrite: false, sizeAttenuation: true });
     const morph = new THREE.Points(pgeo, pmat);
     // Offset shape to the right so it doesn't cover hero text
     morph.position.x = innerWidth < 820 ? 0 : 5;
     morph.position.y = 1;
     scene.add(morph);
 
-    // Subtle wireframe shell
+    // Smooth sphere wireframe shell — SphereGeometry gives clean latitude/longitude lines
     const shell = new THREE.Mesh(
-      new THREE.IcosahedronGeometry(6, 1),
-      new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.04 })
+      new THREE.SphereGeometry(6.2, 56, 40),
+      new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.055 })
     );
     shell.position.copy(morph.position);
     scene.add(shell);
 
 
-    // Orbital ring — the large tilted circle visible in target design
-    const ringGeo = new THREE.TorusGeometry(7.8, 0.025, 8, 160);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.18 });
+    // Orbital ring — smooth tube segments (16 not 8) so it's a circle not hexagon
+    const ringGeo = new THREE.TorusGeometry(7.8, 0.018, 16, 200);
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.2 });
     const ring = new THREE.Mesh(ringGeo, ringMat);
     ring.rotation.x = Math.PI / 2.2;
     ring.rotation.y = 0.3;
@@ -259,18 +259,18 @@
     scene.add(ring);
 
     // Second thinner outer ring
-    const ring2Geo = new THREE.TorusGeometry(9.2, 0.012, 8, 120);
-    const ring2 = new THREE.Mesh(ring2Geo, new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.08 }));
+    const ring2Geo = new THREE.TorusGeometry(9.4, 0.010, 16, 160);
+    const ring2 = new THREE.Mesh(ring2Geo, new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.09 }));
     ring2.rotation.x = Math.PI / 2.5;
     ring2.rotation.z = 0.6;
     ring2.position.copy(morph.position);
     scene.add(ring2);
 
-    // Wave grid — denser, ink-toned
-    const gridGeo = new THREE.PlaneGeometry(180, 180, 80, 80);
-    const grid = new THREE.Mesh(gridGeo, new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.055 }));
-    grid.rotation.x = -Math.PI / 2.3;
-    grid.position.y = -16;
+    // Wave grid — ultra-dense 200×200 subdivisions, gentle amplitude, pushed low
+    const gridGeo = new THREE.PlaneGeometry(220, 220, 200, 200);
+    const grid = new THREE.Mesh(gridGeo, new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.045 }));
+    grid.rotation.x = -Math.PI / 2.4;
+    grid.position.y = -24;
     scene.add(grid);
     const gridBase = Float32Array.from(gridGeo.attributes.position.array);
 
@@ -382,10 +382,10 @@
       ring2.rotation.x = Math.PI / 2.5 + mouseY * 0.05;
       ring2.rotation.z = t * 0.018 + 0.6;
 
-      // Wave grid
+      // Wave grid — gentle fine ripples, small amplitude
       const gridP = gridGeo.attributes.position.array;
       for (let i = 0; i < gridP.length; i += 3) {
-        gridP[i+2] = Math.sin((gridBase[i] + t * 1.5) * 0.2) * 1.2 + Math.cos((gridBase[i+1] + t * 1.2) * 0.2) * 1.2;
+        gridP[i+2] = Math.sin((gridBase[i] + t * 0.9) * 0.14) * 0.55 + Math.cos((gridBase[i+1] + t * 0.7) * 0.14) * 0.55;
       }
       gridGeo.attributes.position.needsUpdate = true;
 
