@@ -278,9 +278,10 @@
     // Wave grid — flowing organic terrain, dense 200×200 with real amplitude
     const gridGeo = new THREE.PlaneGeometry(240, 240, 200, 200);
     const grid = new THREE.Mesh(gridGeo, new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.04 }));
-    grid.rotation.x = -Math.PI / 2.3;
-    grid.position.y = -18;
+    grid.rotation.x = -Math.PI / 2.15;
+    grid.position.y = -30;
     scene.add(grid);
+
     const gridBase = Float32Array.from(gridGeo.attributes.position.array);
 
     if (!isTouch) addEventListener('mousemove', e => { mouseX = e.clientX / innerWidth - 0.5; mouseY = e.clientY / innerHeight - 0.5; });
@@ -403,15 +404,16 @@
       ring2.rotation.z = t * 0.015 + 0.5;
       ring2.scale.set(1, 0.3, 1);
 
-      // Wave grid — flowing organic terrain with compound harmonics
+      // Wave grid — gentle rolling terrain sitting LOW in viewport (bottom 35%)
       const gridP = gridGeo.attributes.position.array;
       for (let i = 0; i < gridP.length; i += 3) {
         const bx = gridBase[i], by = gridBase[i+1];
         gridP[i+2] =
-          Math.sin((bx + t * 0.8) * 0.12) * 1.4 +
-          Math.cos((by + t * 0.6) * 0.12) * 1.0 +
-          Math.sin((bx * 0.3 + by * 0.3 + t * 0.4) * 0.2) * 0.6;
+          Math.sin((bx + t * 0.5) * 0.10) * 1.0 +
+          Math.cos((by + t * 0.4) * 0.10) * 0.6 +
+          Math.sin((bx * 0.25 + by * 0.25 + t * 0.25) * 0.18) * 0.22;
       }
+
 
       gridGeo.attributes.position.needsUpdate = true;
 
