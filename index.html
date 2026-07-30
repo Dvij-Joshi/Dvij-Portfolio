@@ -27,7 +27,7 @@
 
   <canvas id="bg" data-bg></canvas>
   <div class="scrollbar" data-scrollbar></div>
-  <div class="counter" data-counter><b>00</b> / 05</div>
+  <div class="counter" data-counter><span class="counter__dot"></span><b>00</b> / 05</div>
 
   <header class="nav" data-nav>
     <a href="#top" class="nav__brand" data-link>Dvij<span>.</span></a>
@@ -45,21 +45,22 @@
   <main id="top">
     <section class="hero" data-section data-shape="0">
       <div class="hero__inner">
-        <p class="hero__eyebrow" data-reveal><span>Gujarat, India</span> <span>·</span> <span>B.Tech CSE · 4th yr</span></p>
+        <p class="hero__eyebrow" data-reveal><span>GUJARAT, INDIA</span> <span class="hero__eyebrow-sep">•</span> <span>B.TECH CSE</span> <span class="hero__eyebrow-sep">•</span> <span>FINAL YEAR</span></p>
         <h1 class="hero__title">
           <span class="line"><span class="word" data-word>Engineer</span></span>
           <span class="line"><span class="word" data-word>who</span> <span class="word" data-word><em>ships</em></span></span>
           <span class="line"><span class="word" data-word>real</span> <span class="word" data-word>products.</span></span>
         </h1>
         <div class="hero__meta">
-          <p data-reveal>Full-stack · AI · Mobile. I design and build things people actually use — from a desktop Git client with real users to AI EdTech and on-device accessibility apps.</p>
+          <p data-reveal>Full-stack engineer building AI-powered, accessible<br>products that solve real problems.</p>
           <a href="#work" class="hero__scroll" data-link data-magnetic>
-            <span>Selected Work</span>
-            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Explore Work</span>
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
-      <div class="hero__years" data-reveal>~7<i>yrs</i></div>
+      <div class="hero__years" data-reveal>~7<i>yrs</i><s>of building</s></div>
+      <div class="hero__scroll-hint"><span class="hero__scroll-line"></span> Scroll to explore</div>
     </section>
 
     <section class="marquee" aria-hidden="true">

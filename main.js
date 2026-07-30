@@ -249,11 +249,28 @@
     scene.add(shell);
 
 
-    // Subtle wave grid
-    const gridGeo = new THREE.PlaneGeometry(140, 140, 48, 48);
-    const grid = new THREE.Mesh(gridGeo, new THREE.MeshBasicMaterial({ color: 0x1e4dd8, wireframe: true, transparent: true, opacity: 0.05 }));
+    // Orbital ring — the large tilted circle visible in target design
+    const ringGeo = new THREE.TorusGeometry(7.8, 0.025, 8, 160);
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.18 });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.rotation.x = Math.PI / 2.2;
+    ring.rotation.y = 0.3;
+    ring.position.copy(morph.position);
+    scene.add(ring);
+
+    // Second thinner outer ring
+    const ring2Geo = new THREE.TorusGeometry(9.2, 0.012, 8, 120);
+    const ring2 = new THREE.Mesh(ring2Geo, new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.08 }));
+    ring2.rotation.x = Math.PI / 2.5;
+    ring2.rotation.z = 0.6;
+    ring2.position.copy(morph.position);
+    scene.add(ring2);
+
+    // Wave grid — denser, ink-toned
+    const gridGeo = new THREE.PlaneGeometry(180, 180, 80, 80);
+    const grid = new THREE.Mesh(gridGeo, new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.055 }));
     grid.rotation.x = -Math.PI / 2.3;
-    grid.position.y = -14;
+    grid.position.y = -16;
     scene.add(grid);
     const gridBase = Float32Array.from(gridGeo.attributes.position.array);
 
@@ -357,6 +374,13 @@
       shell.position.copy(morph.position);
       shell.rotation.copy(morph.rotation);
       shell.scale.setScalar(morph.scale.x * (1.02 + Math.sin(t * 0.5) * 0.015));
+
+      ring.position.copy(morph.position);
+      ring.rotation.x = Math.PI / 2.2 + mouseY * 0.08;
+      ring.rotation.y = morph.rotation.y * 0.4 + t * 0.025;
+      ring2.position.copy(morph.position);
+      ring2.rotation.x = Math.PI / 2.5 + mouseY * 0.05;
+      ring2.rotation.z = t * 0.018 + 0.6;
 
       // Wave grid
       const gridP = gridGeo.attributes.position.array;
