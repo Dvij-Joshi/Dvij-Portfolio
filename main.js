@@ -235,42 +235,51 @@
     const ptSize = innerWidth < 560 ? 0.065 : innerWidth < 820 ? 0.068 : 0.072;
     const pmat = new THREE.PointsMaterial({ size: ptSize, color: 0xff4d1c, transparent: true, opacity: 0.88, depthWrite: false, sizeAttenuation: true });
     const morph = new THREE.Points(pgeo, pmat);
-    // Offset shape to the right so it doesn't cover hero text
-    morph.position.x = innerWidth < 820 ? 0 : 5;
+    // Push further right to clear text column
+    morph.position.x = innerWidth < 820 ? 0 : 7;
     morph.position.y = 1;
     scene.add(morph);
 
-    // Smooth sphere wireframe shell — SphereGeometry gives clean latitude/longitude lines
+    // Layered shells for depth — inner faint + outer subtle = hazy depth effect
+    const shellInner = new THREE.Mesh(
+      new THREE.SphereGeometry(5.0, 48, 32),
+      new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.02 })
+    );
+    shellInner.position.copy(morph.position);
+    scene.add(shellInner);
+
     const shell = new THREE.Mesh(
-      new THREE.SphereGeometry(6.2, 56, 40),
-      new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.055 })
+      new THREE.SphereGeometry(6.4, 64, 48),
+      new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.035 })
     );
     shell.position.copy(morph.position);
     scene.add(shell);
 
 
-    // Orbital ring — smooth tube segments (16 not 8) so it's a circle not hexagon
-    const ringGeo = new THREE.TorusGeometry(7.8, 0.018, 16, 200);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.2 });
+    // Orbital ring — elliptical (scale.y squashed) for elegant sweep
+    const ringGeo = new THREE.TorusGeometry(8.5, 0.015, 16, 240);
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.18 });
     const ring = new THREE.Mesh(ringGeo, ringMat);
     ring.rotation.x = Math.PI / 2.2;
     ring.rotation.y = 0.3;
+    ring.scale.set(1, 0.35, 1); // squash into ellipse
     ring.position.copy(morph.position);
     scene.add(ring);
 
-    // Second thinner outer ring
-    const ring2Geo = new THREE.TorusGeometry(9.4, 0.010, 16, 160);
-    const ring2 = new THREE.Mesh(ring2Geo, new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.09 }));
-    ring2.rotation.x = Math.PI / 2.5;
-    ring2.rotation.z = 0.6;
+    // Second wider elliptical ring
+    const ring2Geo = new THREE.TorusGeometry(10.5, 0.008, 16, 180);
+    const ring2 = new THREE.Mesh(ring2Geo, new THREE.MeshBasicMaterial({ color: 0x16130f, transparent: true, opacity: 0.08 }));
+    ring2.rotation.x = Math.PI / 2.6;
+    ring2.rotation.z = 0.5;
+    ring2.scale.set(1, 0.3, 1);
     ring2.position.copy(morph.position);
     scene.add(ring2);
 
-    // Wave grid — ultra-dense 200×200 subdivisions, gentle amplitude, pushed low
-    const gridGeo = new THREE.PlaneGeometry(220, 220, 200, 200);
-    const grid = new THREE.Mesh(gridGeo, new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.045 }));
-    grid.rotation.x = -Math.PI / 2.4;
-    grid.position.y = -24;
+    // Wave grid — flowing organic terrain, dense 200×200 with real amplitude
+    const gridGeo = new THREE.PlaneGeometry(240, 240, 200, 200);
+    const grid = new THREE.Mesh(gridGeo, new THREE.MeshBasicMaterial({ color: 0x16130f, wireframe: true, transparent: true, opacity: 0.04 }));
+    grid.rotation.x = -Math.PI / 2.3;
+    grid.position.y = -18;
     scene.add(grid);
     const gridBase = Float32Array.from(gridGeo.attributes.position.array);
 
@@ -371,22 +380,39 @@
 
       morph.rotation.y = t * 0.06 + scrollShape * 0.25 + mouseX * 0.2 + vel * 0.008;
       morph.rotation.x = mouseY * 0.2 + scrollShape * 0.04;
+
+      // Inner shell — follows morph but breathes at different rate for parallax depth
+      shellInner.position.copy(morph.position);
+      shellInner.rotation.y = morph.rotation.y * 0.8;
+      shellInner.rotation.x = morph.rotation.x * 0.7;
+      shellInner.scale.setScalar(morph.scale.x * (0.98 + Math.sin(t * 0.7) * 0.01));
+
+      // Outer shell
       shell.position.copy(morph.position);
       shell.rotation.copy(morph.rotation);
       shell.scale.setScalar(morph.scale.x * (1.02 + Math.sin(t * 0.5) * 0.015));
 
+      // Elliptical rings — maintain squash scale while rotating
       ring.position.copy(morph.position);
       ring.rotation.x = Math.PI / 2.2 + mouseY * 0.08;
-      ring.rotation.y = morph.rotation.y * 0.4 + t * 0.025;
-      ring2.position.copy(morph.position);
-      ring2.rotation.x = Math.PI / 2.5 + mouseY * 0.05;
-      ring2.rotation.z = t * 0.018 + 0.6;
+      ring.rotation.y = morph.rotation.y * 0.3 + t * 0.02;
+      ring.scale.set(1, 0.35, 1);
 
-      // Wave grid — gentle fine ripples, small amplitude
+      ring2.position.copy(morph.position);
+      ring2.rotation.x = Math.PI / 2.6 + mouseY * 0.05;
+      ring2.rotation.z = t * 0.015 + 0.5;
+      ring2.scale.set(1, 0.3, 1);
+
+      // Wave grid — flowing organic terrain with compound harmonics
       const gridP = gridGeo.attributes.position.array;
       for (let i = 0; i < gridP.length; i += 3) {
-        gridP[i+2] = Math.sin((gridBase[i] + t * 0.9) * 0.14) * 0.55 + Math.cos((gridBase[i+1] + t * 0.7) * 0.14) * 0.55;
+        const bx = gridBase[i], by = gridBase[i+1];
+        gridP[i+2] =
+          Math.sin((bx + t * 0.8) * 0.12) * 1.4 +
+          Math.cos((by + t * 0.6) * 0.12) * 1.0 +
+          Math.sin((bx * 0.3 + by * 0.3 + t * 0.4) * 0.2) * 0.6;
       }
+
       gridGeo.attributes.position.needsUpdate = true;
 
       vel *= 0.9;
@@ -399,8 +425,11 @@
       camera.aspect = innerWidth / innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(innerWidth, innerHeight);
-      morph.position.x = innerWidth < 820 ? 0 : 5;
+      morph.position.x = innerWidth < 820 ? 0 : 7;
+      shellInner.position.copy(morph.position);
       shell.position.copy(morph.position);
+      ring.position.copy(morph.position);
+      ring2.position.copy(morph.position);
     });
   }
 
