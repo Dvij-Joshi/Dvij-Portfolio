@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journey Section — Preview</title>
+
+  <!-- Same fonts as main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Preview-only overrides */
+    body {
+      cursor: auto !important;
+      padding-top: 0;
+    }
+    .preview-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: .72rem;
+      padding: 10px clamp(20px,5vw,64px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: .08em;
+    }
+    .preview-bar a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .preview-bar a:hover { text-decoration: underline; }
+    .preview-content {
+      padding-top: 40px;
+    }
+    /* Make cards visible immediately in preview (no scroll needed for first one) */
+    .journey__milestone-card {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
+</head>
+<body class="is-ready gsap-ready">
+
+  <!-- Preview toolbar -->
+  <div class="preview-bar">
+    <span>🗂 JOURNEY SECTION — PREVIEW MODE</span>
+    <a href="index.html">← Back to main site</a>
+  </div>
+
+  <div class="preview-content">
+    <section class="journey" id="journey">
+
+      <!-- Section header -->
+      <div class="journey__header">
+        <div class="journey__header-left">
+          <p class="journey__eyebrow">→ &nbsp;MY JOURNEY</p>
+          <h2 class="journey__headline">The path that<br>shaped who I am</h2>
+          <p class="journey__subline">From late-night code sessions to shipped products —<br>here's the journey so far.</p>
+        </div>
+        <!-- SVG ribbon decoration -->
+        <svg class="journey__ribbon" viewBox="0 0 640 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 0 180 C 80 180 120 80 200 100 C 280 120 320 60 420 80 C 520 100 580 40 640 60" stroke="#ff4d1c" stroke-width="1.5" stroke-opacity="0.35" fill="none"/>
+          <path d="M 0 200 C 100 200 140 120 220 140 C 300 160 340 100 440 110 C 540 120 600 70 640 85" stroke="#ff4d1c" stroke-width="0.8" stroke-opacity="0.18" fill="none"/>
+          <circle cx="200" cy="100" r="5" fill="#ff4d1c" fill-opacity="0.7"/>
+          <circle cx="200" cy="100" r="9" fill="none" stroke="#ff4d1c" stroke-width="1" stroke-opacity="0.3"/>
+          <circle cx="420" cy="80" r="4" fill="#ff4d1c" fill-opacity="0.5"/>
+          <circle cx="420" cy="80" r="8" fill="none" stroke="#ff4d1c" stroke-width="1" stroke-opacity="0.25"/>
+        </svg>
+      </div>
+
+      <!-- Milestone cards -->
+      <div class="journey__milestones">
+
+        <!-- 01 -->
+        <div class="journey__milestone is-visible" data-milestone>
+          <div class="journey__milestone-left">
+            <span class="journey__num">01</span>
+            <div class="journey__icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+            </div>
+          </div>
+          <div class="journey__milestone-card is-visible" data-milestone-card>
+            <div class="journey__milestone-meta">
+              <span class="journey__period">2017 – 2019</span>
+              <span class="journey__era-pill journey__era-pill--foundation">FOUNDATION</span>
+            </div>
+            <h3 class="journey__milestone-title">Diploma in Computer Engineering</h3>
+            <p class="journey__milestone-body">GTU. Built the foundation — C, Java, databases, networking — and started shipping projects early. Real constraints, real learning.</p>
+            <div class="journey__milestone-tags">
+              <span>C</span><span>Java</span><span>DBMS</span><span>Networking</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="journey__milestone is-visible" data-milestone>
+          <div class="journey__milestone-left">
+            <span class="journey__num">02</span>
+            <div class="journey__icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+          </div>
+          <div class="journey__milestone-card is-visible" data-milestone-card>
+            <div class="journey__milestone-meta">
+              <span class="journey__period">2019 – 2021</span>
+              <span class="journey__era-pill journey__era-pill--building">BUILDING</span>
+            </div>
+            <h3 class="journey__milestone-title">Became a Full-Stack Developer</h3>
+            <p class="journey__milestone-body">Explored MERN stack, built real-world apps, and learned to ship features users love.</p>
+            <div class="journey__milestone-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span><span>Express</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="journey__milestone is-visible" data-milestone>
+          <div class="journey__milestone-left">
+            <span class="journey__num">03</span>
+            <div class="journey__icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+          </div>
+          <div class="journey__milestone-card is-visible" data-milestone-card>
+            <div class="journey__milestone-meta">
+              <span class="journey__period">2021 – Now</span>
+              <span class="journey__era-pill journey__era-pill--shipping">SHIPPING</span>
+            </div>
+            <h3 class="journey__milestone-title">50+ Projects — Every Stack</h3>
+            <p class="journey__milestone-body">MongoDB, Android, Flutter, ML, Unity — before AI coding tools existed. B.Tech CSE deepened full-stack + AI/ML pipelines. Every bug earned its solution.</p>
+            <div class="journey__milestone-tags">
+              <span>Flutter</span><span>Unity</span><span>ML</span><span>Android</span><span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="journey__milestone is-visible" data-milestone>
+          <div class="journey__milestone-left">
+            <span class="journey__num">04</span>
+            <div class="journey__icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            </div>
+          </div>
+          <div class="journey__milestone-card is-visible" data-milestone-card>
+            <div class="journey__milestone-meta">
+              <span class="journey__period">2023</span>
+              <span class="journey__era-pill journey__era-pill--industry">INDUSTRY</span>
+            </div>
+            <h3 class="journey__milestone-title">Freelance + Internship</h3>
+            <p class="journey__milestone-body">BrainyBeam internship. Real client work with JSK Enterprises. Shipped under pressure, managed stakeholders, owned products end to end.</p>
+            <div class="journey__milestone-tags">
+              <span>BrainyBeam</span><span>JSK Enterprises</span><span>Client Work</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="journey__milestone is-visible" data-milestone>
+          <div class="journey__milestone-left">
+            <span class="journey__num">05</span>
+            <div class="journey__icon-circle journey__icon-circle--now">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+          </div>
+          <div class="journey__milestone-card is-visible" data-milestone-card>
+            <div class="journey__milestone-meta">
+              <span class="journey__period">Now</span>
+              <span class="journey__era-pill journey__era-pill--now">PRESENT</span>
+            </div>
+            <h3 class="journey__milestone-title">Building products people actually use.</h3>
+            <p class="journey__milestone-body">NeuroCanopy and Twig — real users, real infra. Sharpening DSA fundamentals for placements. Turning 7 years of breadth into depth that compounds.</p>
+            <div class="journey__milestone-tags">
+              <span>NeuroCanopy</span><span>Twig</span><span>DSA</span><span>Placements</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Scripts — same as main site (for scroll animations) -->
+  <script src="gsap.min.js"></script>
+  <script src="ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Milestone scroll reveal (same logic as main.js)
+    document.querySelectorAll('[data-milestone]').forEach((row, i) => {
+      const card = row.querySelector('[data-milestone-card]');
+      if (!card) return;
+      // In preview, reset to animated state
+      gsap.set(card, { opacity: 0, y: 28 });
+      row.classList.remove('is-visible');
+
+      ScrollTrigger.create({
+        trigger: row,
+        start: 'top 85%',
+        onEnter() {
+          row.classList.add('is-visible');
+          gsap.to(card, { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out', delay: 0.05 * i });
+        },
+        onLeaveBack() {
+          row.classList.remove('is-visible');
+          gsap.set(card, { opacity: 0, y: 28 });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
